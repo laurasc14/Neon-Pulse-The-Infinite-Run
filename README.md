@@ -28,4 +28,4 @@ Descàrrega: Disponible a les plataformes [Steam], [Google Play] i [App Store] (
 
 
 
-Aquest projecte està desenvolupat com a part d'un Treball Final de Grau (TFG), amb l’objectiu d’explorar tècniques de generació procedural i disseny de videojocs immersius.
+#### Aquest projecte està desenvolupat com a part d'un Treball Final de Grau (TFG), amb l’objectiu d’explorar tècniques de generació procedural i disseny de videojocs immersius.
