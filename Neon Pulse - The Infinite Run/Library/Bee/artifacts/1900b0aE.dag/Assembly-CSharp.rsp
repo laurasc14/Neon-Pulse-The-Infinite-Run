@@ -355,6 +355,8 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.28f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Code/AnimatorController.cs"
 "Assets/Code/Coin.cs"
+"Assets/Code/GameManager.cs"
+"Assets/Code/ObstacleSpawner.cs"
 "Assets/Code/PlayerController.cs"
 -langversion:9.0
 /deterministic
