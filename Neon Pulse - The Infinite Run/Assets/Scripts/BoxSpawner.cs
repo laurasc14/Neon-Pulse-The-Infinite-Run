@@ -6,11 +6,14 @@ public class BoxSpawner : MonoBehaviour
 {
 
     public GameObject prefab;
-    public float spawnvelocity = 2;
+    public float spawnvelocity = 0.25f;
     private float nextspawn;
+    public AnimationCurve spawnCurve;
 
-    public float spawnRangeX = 5;
+    public float spawnRangeX = 2.5f;
     public float spawnRangeZ = 5;
+
+    private float timePlayed = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +31,17 @@ public class BoxSpawner : MonoBehaviour
 
             Vector3 spawnPosition = new Vector3(
                 transform.position.x + randomOffsetX,
-                transform.position.y,  
-                transform.position.z + randomOffsetZ
+                transform.position.y +0.5f,  
+                20
             );
 
             Instantiate(prefab, spawnPosition, Quaternion.identity); //añadir spawn aleatorio, sumando algo al transform position, buscar random.range
             
-            nextspawn = Time.time + spawnvelocity;
+            nextspawn = Time.time + spawnvelocity * spawnCurve.Evaluate(timePlayed/60);
+            
         }
+        timePlayed += Time.deltaTime;
     }
+
+
 }
