@@ -4,44 +4,89 @@ using UnityEngine;
 
 public class BoxSpawner : MonoBehaviour
 {
+    public GameObject taxiPrefab;
+    public GameObject specialPrefab;
 
-    public GameObject prefab;
-    public float spawnvelocity = 0.25f;
+    //variables taxi
+    public float spawnVelocity = 0.25f;
     private float nextspawn;
     public AnimationCurve spawnCurve;
 
     public float spawnRangeX = 2.5f;
     public float spawnRangeZ = 5;
 
+    //variables altre spawner
+    public float specialSpawnChance = 0.2f;
+    public float minSpecialInterval = 5f; 
+    public float maxSpecialInterval = 15f;
+    private float nextSpecialSpawn; 
+
     private float timePlayed = 0;
+
+    //Coordenades fixes per als carrils
+    private float[] lanes = { -2.5f, 0f, 2.5f };
+
+    private float lastSpawnZ = -10f; // Última posició Z generada
+    private float minSpawnDistance = 10f; // Distància mínima entre vehicles
 
     // Start is called before the first frame update
     void Start()
     {
-        nextspawn = Time.time + spawnvelocity;
+        nextspawn = Time.time + spawnVelocity;
+        nextSpecialSpawn = Time.time + Random.Range(minSpecialInterval, maxSpecialInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextspawn) {
-
-            float randomOffsetX = Random.Range(-spawnRangeX, spawnRangeX);
-            float randomOffsetZ = Random.Range(-spawnRangeZ, spawnRangeZ);
-
-            Vector3 spawnPosition = new Vector3(
-                transform.position.x + randomOffsetX,
-                transform.position.y +0.5f,  
-                20
-            );
-
-            Instantiate(prefab, spawnPosition, Quaternion.identity); //añadir spawn aleatorio, sumando algo al transform position, buscar random.range
-            
-            nextspawn = Time.time + spawnvelocity * spawnCurve.Evaluate(timePlayed/60);
-            
+        if (Time.time > nextspawn)
+        {
+            SpawnTaxi();
+            nextspawn = Time.time + spawnVelocity * spawnCurve.Evaluate(timePlayed / 60);
         }
+
+        if (Time.time > nextSpecialSpawn)
+        {
+            if (Random.value < specialSpawnChance) // Probabilitat de generar l'element especial
+            {
+                SpawnSpecial();
+            }
+            nextSpecialSpawn = Time.time + Random.Range(minSpecialInterval, maxSpecialInterval); // Recalcula el temps per al proper spawn especial
+        }
+
         timePlayed += Time.deltaTime;
     }
 
+    void SpawnTaxi() 
+    {
+        // Selecciona un carril aleatori
+        float lane = lanes[Random.Range(0, lanes.Length)];
 
+        // Calcula la posició del taxi
+        float spawnZ = lastSpawnZ + minSpawnDistance; // Assegura distància mínima
+        Vector3 spawnPosition = new Vector3(
+            lane,
+            transform.position.y + 0.5f,
+            spawnZ
+        );
+
+        // Genera el taxi
+        Instantiate(taxiPrefab, spawnPosition, Quaternion.identity);
+
+        // Actualitza la posició Z
+        lastSpawnZ = spawnZ;
+    }
+
+    void SpawnSpecial()
+    {
+        // Posició aleatòria per als elements especials
+        float randomOffsetX = Random.Range(-spawnRangeX, spawnRangeX);
+        Vector3 spawnPosition = new Vector3(
+            transform.position.x + randomOffsetX,
+            transform.position.y + 0.5f,
+            20
+        );
+
+        Instantiate(specialPrefab, spawnPosition, Quaternion.identity);
+    }
 }
