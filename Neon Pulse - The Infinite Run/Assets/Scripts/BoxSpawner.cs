@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BoxSpawner : MonoBehaviour
 {
-    public GameObject taxiPrefab;
+    //public GameObject taxiPrefab;
     public GameObject specialPrefab;
+
+    public ObjectPool taxiPool;
 
     //variables taxi
     public float spawnVelocity = 0.25f;
@@ -33,6 +35,7 @@ public class BoxSpawner : MonoBehaviour
     void Start()
     {
         nextspawn = Time.time + spawnVelocity;
+
         nextSpecialSpawn = Time.time + Random.Range(minSpecialInterval, maxSpecialInterval);
     }
 
@@ -61,17 +64,20 @@ public class BoxSpawner : MonoBehaviour
     {
         // Selecciona un carril aleatori
         float lane = lanes[Random.Range(0, lanes.Length)];
+        float spawnZ = lastSpawnZ + minSpawnDistance;
 
-        // Calcula la posició del taxi
-        float spawnZ = lastSpawnZ + minSpawnDistance; // Assegura distància mínima
         Vector3 spawnPosition = new Vector3(
             lane,
             transform.position.y + 0.5f,
             spawnZ
         );
 
-        // Genera el taxi
-        Instantiate(taxiPrefab, spawnPosition, Quaternion.identity);
+        Debug.Log($"Attempting to spawn taxi at position {spawnPosition}."); // Depuració
+
+        // Obté un taxi del pool en lloc de crear-ne un de nou
+        GameObject taxi = taxiPool.GetFromPool(spawnPosition, Quaternion.identity);
+
+        Debug.Log($"Taxi spawned at position {spawnPosition}."); // Depuració
 
         // Actualitza la posició Z
         lastSpawnZ = spawnZ;
