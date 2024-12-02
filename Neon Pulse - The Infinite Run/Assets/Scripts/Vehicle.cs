@@ -15,6 +15,7 @@ public class Vehicle : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log($"Vehicle {gameObject.name} at position {transform.position.z}"); // Depuració
         // Comprova si el vehicle ha sortit de l'àrea visible
         if (transform.position.z < -10f) // Pots ajustar aquest valor segons el joc
         {

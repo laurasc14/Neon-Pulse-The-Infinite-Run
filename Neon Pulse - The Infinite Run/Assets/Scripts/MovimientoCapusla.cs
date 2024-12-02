@@ -11,8 +11,8 @@ public class MovimientoCapusla : MonoBehaviour
     private Rigidbody rb;
 
     public float velocity = 5;
-    public float jump = 25;
-    private bool ensuelo = false;
+    public float jumpForce = 25;
+    //private bool ensuelo = false;
     public GameObject pies;
     public LayerMask suelo;
 
@@ -35,10 +35,10 @@ public class MovimientoCapusla : MonoBehaviour
         {
             rb.velocity = transform.right * velocity + new Vector3(0, rb.velocity.y);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && ensuelo) {
-            rb.AddForce(new Vector3(0, jump, 0), ForceMode.Impulse );
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
-        ensuelo = Physics.Raycast(pies.transform.position, Vector3.down, 0.1f, suelo);
 
         puntuacion += 10 * Time.deltaTime;
         texto.text = puntuacion.ToString("F0");
@@ -49,5 +49,10 @@ public class MovimientoCapusla : MonoBehaviour
         if (other.gameObject.CompareTag("Obstaculo")) {
             SceneManager.LoadScene(0);
         }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 1.1f);
     }
 }

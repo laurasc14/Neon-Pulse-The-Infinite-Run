@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 943585939465099248}
   - component: {fileID: 7325284161240661646}
   - component: {fileID: 8831331631894104226}
+  - component: {fileID: -5695038751304867494}
   m_Layer: 0
   m_Name: Taxi
   m_TagString: Obstaculo
@@ -120,6 +121,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+--- !u!114 &-5695038751304867494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3616890688399995277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e40392f4d9d6984f9b23d8b842e7e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5907825246053124764
 PrefabInstance:
   m_ObjectHideFlags: 0

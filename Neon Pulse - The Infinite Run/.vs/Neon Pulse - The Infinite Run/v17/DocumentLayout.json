@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|d:\\neon-pulse-the-infinite-run\\neon pulse - the infinite run\\assets\\scripts\\objectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\assets\\scripts\\movimientocapusla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movimientocapusla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\assets\\scripts\\boxspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boxspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|d:\\neon-pulse-the-infinite-run\\neon pulse - the infinite run\\assets\\scripts\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\assets\\scripts\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\assets\\scripts\\movimientocapusla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movimientocapusla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\assets\\scripts\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|d:\\neon-pulse-the-infinite-run\\neon pulse - the infinite run\\assets\\scripts\\objectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|d:\\neon-pulse-the-infinite-run\\neon pulse - the infinite run\\assets\\scripts\\boxcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boxcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\assets\\scripts\\roadmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\assets\\scripts\\enviromentgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{31F7F50E-2862-0703-16BA-297328EDF633}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enviromentgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\no\\BoxController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\no\\BoxController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,69 +42,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "BoxController.cs",
+              "DocumentMoniker": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\BoxController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BoxController.cs",
+              "ToolTip": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\BoxController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BoxController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T17:24:18.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ObjectPool.cs",
               "DocumentMoniker": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\ObjectPool.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ObjectPool.cs",
               "ToolTip": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\ObjectPool.cs",
               "RelativeToolTip": "Assets\\Scripts\\ObjectPool.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAXAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAzwBcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T22:37:16.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Vehicle.cs",
               "DocumentMoniker": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\Vehicle.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Vehicle.cs",
               "ToolTip": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\Vehicle.cs",
               "RelativeToolTip": "Assets\\Scripts\\Vehicle.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T22:35:03.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MenuController.cs",
               "DocumentMoniker": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\MenuController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MenuController.cs",
               "ToolTip": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\MenuController.cs",
               "RelativeToolTip": "Assets\\Scripts\\MenuController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBwAAAAbAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T17:29:44.556Z"
+              "WhenOpened": "2024-11-17T17:29:44.556Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "MovimientoCapusla.cs",
               "DocumentMoniker": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\MovimientoCapusla.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MovimientoCapusla.cs",
               "ToolTip": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\MovimientoCapusla.cs",
               "RelativeToolTip": "Assets\\Scripts\\MovimientoCapusla.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAYwDEAAAAMAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwCcAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T17:22:10.893Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BoxController.cs",
-              "DocumentMoniker": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\no\\BoxController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\no\\BoxController.cs",
-              "ToolTip": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\no\\BoxController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\no\\BoxController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T17:19:03.359Z"
+              "WhenOpened": "2024-11-16T17:22:10.893Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -114,14 +117,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\BoxSpawner.cs",
               "ToolTip": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\BoxSpawner.cs",
               "RelativeToolTip": "Assets\\Scripts\\BoxSpawner.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAYwE8AAABNAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAAAF8AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-16T17:16:40.877Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "RoadMovement.cs",
               "DocumentMoniker": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\RoadMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RoadMovement.cs",
@@ -133,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "EnviromentGenerator.cs",
               "DocumentMoniker": "D:\\Neon-Pulse-The-Infinite-Run\\Neon Pulse - The Infinite Run\\Assets\\Scripts\\EnviromentGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnviromentGenerator.cs",

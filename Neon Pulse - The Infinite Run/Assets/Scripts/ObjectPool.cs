@@ -10,6 +10,9 @@ public class ObjectPool : MonoBehaviour
 
     void Start()
     {
+
+        //Debug.Log($"Initializing ObjectPool with {poolSize} objects.");
+
         pool = new Queue<GameObject>();
 
         // Crea els objectes inicials al pool
@@ -21,7 +24,7 @@ public class ObjectPool : MonoBehaviour
             Debug.Log($"Object {obj.name} created and added to the pool."); // Depuració
         }
 
-        Debug.Log($"Pool initialized with {pool.Count} objects."); // Depuració
+        //Debug.Log($"Pool initialized with {pool.Count} objects."); // Depuració
     }
 
     public GameObject GetFromPool(Vector3 position, Quaternion rotation)
@@ -40,7 +43,7 @@ public class ObjectPool : MonoBehaviour
             // Si el pool està buit, crea un nou objecte
             Debug.LogWarning("Pool is empty! Creating a new object."); // Depuració
             GameObject obj = Instantiate(prefab, position, rotation);
-            Debug.Log($"Object {obj.name} created because pool was empty."); // Depuració
+            //Debug.Log($"Object {obj.name} created because pool was empty."); // Depuració
             return obj;
         }
     }

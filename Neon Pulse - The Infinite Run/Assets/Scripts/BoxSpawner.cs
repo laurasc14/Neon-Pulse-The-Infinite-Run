@@ -37,6 +37,15 @@ public class BoxSpawner : MonoBehaviour
         nextspawn = Time.time + spawnVelocity;
 
         nextSpecialSpawn = Time.time + Random.Range(minSpecialInterval, maxSpecialInterval);
+
+        /**if (taxiPool != null)
+        {
+            Debug.Log("TaxiPool is connected to BoxSpawner!");
+        }
+        else
+        {
+            Debug.LogError("TaxiPool is NOT connected to BoxSpawner!");
+        }*/
     }
 
     // Update is called once per frame
@@ -72,12 +81,20 @@ public class BoxSpawner : MonoBehaviour
             spawnZ
         );
 
-        Debug.Log($"Attempting to spawn taxi at position {spawnPosition}."); // Depuració
+        //Debug.Log($"Attempting to spawn taxi at position {spawnPosition}."); // Depuració
 
         // Obté un taxi del pool en lloc de crear-ne un de nou
         GameObject taxi = taxiPool.GetFromPool(spawnPosition, Quaternion.identity);
+        //Debug.Log($"Spawned taxi at position {spawnPosition}"); // Depuració
 
-        Debug.Log($"Taxi spawned at position {spawnPosition}."); // Depuració
+
+        // Assigna el pool al vehicle
+        Vehicle vehicleScript = taxi.GetComponent<Vehicle>();
+        if (vehicleScript != null)
+        {
+            vehicleScript.SetPool(taxiPool); // Assigna la referència al pool
+            //Debug.LogError($"Vehicle {taxi.name} does not have a Vehicle script attached!");
+        }
 
         // Actualitza la posició Z
         lastSpawnZ = spawnZ;
