@@ -16,8 +16,10 @@ public class MovimientoCapusla : MonoBehaviour
     public GameObject pies;
     public LayerMask suelo;
 
-    public TMP_Text texto;
     float puntuacion = 0;
+
+    float jumpPowerDuration = 0;
+    bool jumpPowerActive = false;
 
     void Start()
     {
@@ -37,11 +39,29 @@ public class MovimientoCapusla : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            if(jumpPowerActive)
+            {
+                rb.AddForce(Vector3.up * jumpForce*1.25f, ForceMode.Impulse);
+            }
+            else
+            {
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
         }
 
         puntuacion += 10 * Time.deltaTime;
-        texto.text = puntuacion.ToString("F0");
+        if (puntuacion > 0)
+        {
+            int puntuacionEntera = Mathf.FloorToInt(puntuacion);
+            puntuacion -= puntuacionEntera;
+            ScoreManager.instance.AddPoints(puntuacionEntera);
+        }
+        if(jumpPowerDuration < Time.time)
+        {
+            jumpPowerActive = false;
+            jumpPowerDuration = 0;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,6 +73,11 @@ public class MovimientoCapusla : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 1.1f);
+        return Physics.Raycast(transform.position, Vector3.down, 1.5f);
+    }
+
+    public void powerJump() {
+        jumpPowerDuration = Time.time + 10;
+        jumpPowerActive = true;
     }
 }

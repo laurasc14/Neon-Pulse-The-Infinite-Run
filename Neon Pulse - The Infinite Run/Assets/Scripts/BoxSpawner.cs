@@ -10,18 +10,15 @@ public class BoxSpawner : MonoBehaviour
     public ObjectPool taxiPool;
 
     //variables taxi
-    public float spawnVelocity = 0.25f;
+    public float spawnVelocity = 2;
     private float nextspawn;
     public AnimationCurve spawnCurve;
 
     public float spawnRangeX = 2.5f;
     public float spawnRangeZ = 5;
 
-    //variables altre spawner
-    public float specialSpawnChance = 0.2f;
-    public float minSpecialInterval = 5f; 
-    public float maxSpecialInterval = 15f;
-    private float nextSpecialSpawn; 
+  
+  
 
     private float timePlayed = 0;
 
@@ -36,7 +33,7 @@ public class BoxSpawner : MonoBehaviour
     {
         nextspawn = Time.time + spawnVelocity;
 
-        nextSpecialSpawn = Time.time + Random.Range(minSpecialInterval, maxSpecialInterval);
+        //nextSpecialSpawn = Time.time + Random.Range(minSpecialInterval, maxSpecialInterval);
 
         /**if (taxiPool != null)
         {
@@ -57,19 +54,12 @@ public class BoxSpawner : MonoBehaviour
             nextspawn = Time.time + spawnVelocity * spawnCurve.Evaluate(timePlayed / 60);
         }
 
-        if (Time.time > nextSpecialSpawn)
-        {
-            if (Random.value < specialSpawnChance) // Probabilitat de generar l'element especial
-            {
-                SpawnSpecial();
-            }
-            nextSpecialSpawn = Time.time + Random.Range(minSpecialInterval, maxSpecialInterval); // Recalcula el temps per al proper spawn especial
-        }
+  
 
         timePlayed += Time.deltaTime;
     }
 
-    void SpawnTaxi() 
+    void SpawnTaxi()
     {
         // Selecciona un carril aleatori
         float lane = lanes[Random.Range(0, lanes.Length)];
@@ -96,20 +86,10 @@ public class BoxSpawner : MonoBehaviour
             //Debug.LogError($"Vehicle {taxi.name} does not have a Vehicle script attached!");
         }
 
+        // Actualitza el temps del següent spawn
+        nextspawn = Time.time + spawnVelocity;
         // Actualitza la posició Z
         lastSpawnZ = spawnZ;
     }
 
-    void SpawnSpecial()
-    {
-        // Posició aleatòria per als elements especials
-        float randomOffsetX = Random.Range(-spawnRangeX, spawnRangeX);
-        Vector3 spawnPosition = new Vector3(
-            transform.position.x + randomOffsetX,
-            transform.position.y + 0.5f,
-            20
-        );
-
-        Instantiate(specialPrefab, spawnPosition, Quaternion.identity);
-    }
 }

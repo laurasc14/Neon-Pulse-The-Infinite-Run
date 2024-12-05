@@ -3,47 +3,52 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public GameObject prefab; // Prefab que es reutilitzarà
-    public int poolSize = 10; // Nombre inicial d'objectes al pool
-
-    private Queue<GameObject> pool; // Cua per gestionar els objectes
+    public GameObject prefab; // Prefab a gestionar
+    public int poolSize = 20; // Nombre inicial d'objectes al pool
+    private Queue<GameObject> pool; // Cua per gestionar el pool
 
     void Start()
     {
-
-        //Debug.Log($"Initializing ObjectPool with {poolSize} objects.");
-
         pool = new Queue<GameObject>();
 
-        // Crea els objectes inicials al pool
+        // Inicialitza el pool
         for (int i = 0; i < poolSize; i++)
         {
             GameObject obj = Instantiate(prefab);
-            obj.SetActive(false); // Manté els objectes inactius fins que es necessitin
+            obj.SetActive(false);
             pool.Enqueue(obj);
-            Debug.Log($"Object {obj.name} created and added to the pool."); // Depuració
+            Debug.Log($"[ObjectPool] Object {obj.name} created and added to pool. Pool size: {pool.Count}");
         }
-
-        //Debug.Log($"Pool initialized with {pool.Count} objects."); // Depuració
     }
 
     public GameObject GetFromPool(Vector3 position, Quaternion rotation)
     {
         if (pool.Count > 0)
         {
-            GameObject obj = pool.Dequeue(); // Treu un objecte del pool
+            GameObject obj = pool.Dequeue();
             obj.transform.position = position;
             obj.transform.rotation = rotation;
-            obj.SetActive(true); // Activa l'objecte per usar-lo
-            Debug.Log($"Object retrieved from pool: {obj.name}. Remaining in pool: {pool.Count}"); // Depuració
+            obj.SetActive(true);
+            Debug.Log($"[ObjectPool] Object retrieved: {obj.name}. Remaining in pool: {pool.Count}");
             return obj;
         }
         else
         {
-            // Si el pool està buit, crea un nou objecte
-            Debug.LogWarning("Pool is empty! Creating a new object."); // Depuració
+            Debug.LogWarning("[ObjectPool] Pool is empty! Creating a new object.");
             GameObject obj = Instantiate(prefab, position, rotation);
-            //Debug.Log($"Object {obj.name} created because pool was empty."); // Depuració
+
+            // Assigna el pool al nou objecte
+            Vehicle vehicleScript = obj.GetComponent<Vehicle>();
+            if (vehicleScript != null)
+            {
+                vehicleScript.SetPool(this);
+                Debug.Log($"[ObjectPool] Pool assigned to new object: {obj.name}");
+            }
+            else
+            {
+                Debug.LogError($"[ObjectPool] New object {obj.name} does not have a Vehicle script!");
+            }
+
             return obj;
         }
     }
@@ -51,7 +56,8 @@ public class ObjectPool : MonoBehaviour
     public void ReturnToPool(GameObject obj)
     {
         obj.SetActive(false); // Desactiva l'objecte
-        pool.Enqueue(obj); // Torna’l al pool
-        Debug.Log($"Object returned to pool: {obj.name}. Pool size: {pool.Count}"); // Depuració
+        pool.Enqueue(obj); // Torna al pool
+        Debug.Log($"[ObjectPool] Object returned: {obj.name}. Pool size: {pool.Count}");
     }
 }
+
