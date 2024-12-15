@@ -17,7 +17,7 @@ public class ObjectPool : MonoBehaviour
             GameObject obj = Instantiate(prefab);
             obj.SetActive(false);
             pool.Enqueue(obj);
-            Debug.Log($"[ObjectPool] Object {obj.name} created and added to pool. Pool size: {pool.Count}");
+            //Debug.Log($"[ObjectPool] Object {obj.name} created and added to pool. Pool size: {pool.Count}");
         }
     }
 
@@ -29,12 +29,12 @@ public class ObjectPool : MonoBehaviour
             obj.transform.position = position;
             obj.transform.rotation = rotation;
             obj.SetActive(true);
-            Debug.Log($"[ObjectPool] Object retrieved: {obj.name}. Remaining in pool: {pool.Count}");
+            //Debug.Log($"[ObjectPool] Object retrieved: {obj.name}. Remaining in pool: {pool.Count}");
             return obj;
         }
         else
         {
-            Debug.LogWarning("[ObjectPool] Pool is empty! Creating a new object.");
+            //Debug.LogWarning("[ObjectPool] Pool is empty! Creating a new object.");
             GameObject obj = Instantiate(prefab, position, rotation);
 
             // Assigna el pool al nou objecte
@@ -42,11 +42,11 @@ public class ObjectPool : MonoBehaviour
             if (vehicleScript != null)
             {
                 vehicleScript.SetPool(this);
-                Debug.Log($"[ObjectPool] Pool assigned to new object: {obj.name}");
+                //Debug.Log($"[ObjectPool] Pool assigned to new object: {obj.name}");
             }
             else
             {
-                Debug.LogError($"[ObjectPool] New object {obj.name} does not have a Vehicle script!");
+                //Debug.LogError($"[ObjectPool] New object {obj.name} does not have a Vehicle script!");
             }
 
             return obj;
@@ -57,7 +57,7 @@ public class ObjectPool : MonoBehaviour
     {
         obj.SetActive(false); // Desactiva l'objecte
         pool.Enqueue(obj); // Torna al pool
-        Debug.Log($"[ObjectPool] Object returned: {obj.name}. Pool size: {pool.Count}");
+        //Debug.Log($"[ObjectPool] Object returned: {obj.name}. Pool size: {pool.Count}");
     }
 }
 
