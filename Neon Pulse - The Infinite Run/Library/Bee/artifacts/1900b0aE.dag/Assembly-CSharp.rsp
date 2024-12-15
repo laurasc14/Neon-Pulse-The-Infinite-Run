@@ -379,6 +379,7 @@
 "Assets/Scripts/PowerUps/JumpPowerUp.cs"
 "Assets/Scripts/PowerUps/MagnetPowerUp.cs"
 "Assets/Scripts/PowerUps/PowerUp.cs"
+"Assets/Scripts/PowerUps/PowerUpUIManager.cs"
 "Assets/Scripts/PowerUps/ShieldPowerUp.cs"
 "Assets/Scripts/PowerUps/SpeedPowerUp.cs"
 "Assets/Scripts/RoadMovement.cs"

@@ -29,6 +29,6 @@ public class OptionsManager : MonoBehaviour
     public void GoBackToMainMenu()
     {
         // Torna al menú principal
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainPrincipal");
     }
 }
