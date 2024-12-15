@@ -7,15 +7,27 @@ public class TextPoints : MonoBehaviour
 {
     public TMP_Text text;
 
-    // Start is called before the first frame update
+    private int currentPoints = -1; // Valor inicial diferent de qualsevol puntuació possible
+
     void Start()
     {
-        
+        // Inicialitza el text amb la puntuació actual
+        UpdatePointsText(ScoreManager.instance.GetPoints());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        text.text = ScoreManager.instance.GetPoints().ToString();
+        // Només actualitza el text si la puntuació ha canviat
+        int newPoints = ScoreManager.instance.GetPoints();
+        if (newPoints != currentPoints)
+        {
+            UpdatePointsText(newPoints);
+        }
+    }
+
+    private void UpdatePointsText(int points)
+    {
+        currentPoints = points;
+        text.text = $"{points}"; 
     }
 }
