@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1980135329284546398}
   - component: {fileID: 2710057386486210527}
   - component: {fileID: 3260146363399687655}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Birra
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 1586275792966676, guid: 36671c50e5b866247937253a255b19aa, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Bottle_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586275792966676, guid: 36671c50e5b866247937253a255b19aa, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4309815660970282, guid: 36671c50e5b866247937253a255b19aa, type: 3}
       propertyPath: m_LocalScale.x
