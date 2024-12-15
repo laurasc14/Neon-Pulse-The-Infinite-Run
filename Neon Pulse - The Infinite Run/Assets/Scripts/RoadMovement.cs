@@ -22,6 +22,9 @@ public class RoadMovement : MonoBehaviour
         if (transform.position.z < -30) { 
             GetComponentInParent<EnviromentGenerator>().RemoveRoad(gameObject);
             Destroy(gameObject);
+
+            GetComponentInParent<DecorationGenerator>().RemoveDecoration(gameObject);
+            Destroy(gameObject);
         }
     }
 }

@@ -14,6 +14,8 @@ public class ScoreManager : MonoBehaviour
     public delegate void PointsChanged(int newPoints);
     public static event PointsChanged OnPointsChanged;
 
+    private int coinsCollected = 0; // Monedes recollides
+
     private void Awake()
     {
         if (instance == null)
@@ -46,5 +48,15 @@ public class ScoreManager : MonoBehaviour
     public int GetPoints()
     {
         return points;
+    }
+
+    public void AddCoin(int amount)
+    {
+        coinsCollected += amount;
+    }
+
+    public int GetCoins()
+    {
+        return coinsCollected;
     }
 }

@@ -16,7 +16,7 @@ public class MovimientoCapusla : MonoBehaviour
 
     public float velocity = 5;
     public float jumpForce = 25;
-    
+
     public GameObject pies;
     public LayerMask suelo;
 
@@ -48,14 +48,14 @@ public class MovimientoCapusla : MonoBehaviour
     {
         Vector3 moveDirection = moveAction.action.ReadValue<Vector2>();
         moveDirection.y = 0;
-        rb.velocity = moveDirection*velocity + new Vector3(0, rb.velocity.y);
+        rb.velocity = moveDirection * velocity + new Vector3(0, rb.velocity.y);
 
-        
+
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-            if(jumpPowerActive)
+            if (jumpPowerActive)
             {
-                rb.AddForce(Vector3.up * jumpForce*1.25f, ForceMode.Impulse);
+                rb.AddForce(Vector3.up * jumpForce * 1.25f, ForceMode.Impulse);
             }
             else
             {
@@ -70,7 +70,7 @@ public class MovimientoCapusla : MonoBehaviour
             puntuacion -= puntuacionEntera;
             ScoreManager.instance.AddPoints(puntuacionEntera);
         }
-        if(jumpPowerDuration < Time.time)
+        if (jumpPowerDuration < Time.time)
         {
             jumpPowerActive = false;
             jumpPowerDuration = 0;
@@ -122,7 +122,8 @@ public class MovimientoCapusla : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, 1.5f, suelo);
     }
 
-    public void powerJump() {
+    public void powerJump()
+    {
         jumpPowerDuration = Time.time + 10;
         jumpPowerActive = true;
     }
@@ -178,8 +179,16 @@ public class MovimientoCapusla : MonoBehaviour
                 // Atraure la moneda cap al jugador
                 Vector3 direction = (transform.position - coin.transform.position).normalized;
                 coin.transform.position += direction * magnetSpeed * Time.deltaTime;
+
+                // Comprova si la moneda està prou a prop del jugador per ser recollida
+                if (Vector3.Distance(coin.transform.position, transform.position) < 0.8f) // Ajusta el valor segons calgui
+                {
+                    // Suma la moneda al comptador i destrueix-la
+                    ScoreManager.instance.AddCoin(1); // Incrementa les monedes
+                    Destroy(coin.gameObject); // Destrueix la moneda després d'atrapar-la
+                }
             }
         }
-    }
 
+    }
 }

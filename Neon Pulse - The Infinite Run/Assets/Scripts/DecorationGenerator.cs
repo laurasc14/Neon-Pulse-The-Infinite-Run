@@ -6,7 +6,7 @@ public class DecorationGenerator : MonoBehaviour
 {
     [Header("Decoration Configuration")]
    
-    public GameObject decorationParent;                  // Parent per les carreteres
+    public GameObject decorationParent;            // Parent per les carreteres
     private float currentZPosition = -30f;         // Posició inicial Z
 
     [Header("Sidewalk Configuration")]
@@ -53,10 +53,6 @@ public class DecorationGenerator : MonoBehaviour
         {
             CreateDecoration();
         }
-
-        
-
-
     }
 
     public void CreateDecoration()

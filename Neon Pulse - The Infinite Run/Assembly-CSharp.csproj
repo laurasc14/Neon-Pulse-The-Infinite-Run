@@ -117,6 +117,7 @@
     <Compile Include="Assets\Scripts\PowerUps\MagnetPowerUp.cs" />
     <Compile Include="Assets\Scripts\EnviromentGenerator.cs" />
     <Compile Include="Assets\Scripts\DifficultyManager.cs" />
+    <Compile Include="Assets\Scripts\CoinDisplay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\PowerUps\SpeedPowerUp.cs" />
   </ItemGroup>

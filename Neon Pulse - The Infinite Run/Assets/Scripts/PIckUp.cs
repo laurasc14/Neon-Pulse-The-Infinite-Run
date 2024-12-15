@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class PIckUp : MonoBehaviour
 {
-    public int points = 10;
+    public int coinValue = 1; // Valor de la moneda
+    public int points = 10;   // Punts que atorga la moneda
+    private bool isCollected = false; // Marca si la moneda ja ha estat recollida
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !isCollected) // Comprova que la moneda no estigui recollida
         {
+            // Afegeix la moneda
+            ScoreManager.instance.AddCoin(coinValue);
+
+            // Afegeix punts
             ScoreManager.instance.AddPoints(points);
+
+            // Marca la moneda com recollida
+            isCollected = true;
+
+            // Destrueix la moneda
             Destroy(gameObject);
         }
+    }
+
+    public void SetCollected(bool value)
+    {
+        isCollected = value;
     }
 }
