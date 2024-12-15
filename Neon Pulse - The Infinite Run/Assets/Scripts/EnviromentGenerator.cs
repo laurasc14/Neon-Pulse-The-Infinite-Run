@@ -22,13 +22,34 @@ public class EnviromentGenerator : MonoBehaviour
     public List<GameObject> rightSideElements;     // Prefabs decoratius per dreta
     public float sideElementOffsetX = 7f;          // Offset per decoració lateral
 
+    float roadGenerationTime = 0;
+    List<GameObject> activeRoads;
+    GameObject lastRoadGenerated;
+
     void Start()
     {
+        activeRoads = new List<GameObject>();
+
+        Vector3 roadPosition = new Vector3(3.75f, 0, -30);
+        GameObject geo = Instantiate(roadPrefab, roadPosition, Quaternion.Euler(0, -90, 0), roadParent.transform);
+        activeRoads.Add(geo);
+        //lastRoadGenerated = geo;
+
         // Genera carretera central, voreres i decoració
         for (int i = 0; i < roadSections; ++i)
         {
             GenerateRoadSection();
         }
+    }
+
+    private void Update()
+    {
+        if(activeRoads.Count < 30)
+        {
+            CreateRoad();
+        }
+        
+
     }
 
     public void CreateRoad()
@@ -37,21 +58,28 @@ public class EnviromentGenerator : MonoBehaviour
         GenerateRoadSection();
     }
 
+
+
+
     private void GenerateRoadSection()
     {
         // **1. Genera la carretera al centre (carretera principal)**
+        currentZPosition = activeRoads[activeRoads.Count - 1].transform.position.z + 9;
         Vector3 roadPosition = new Vector3(3.75f, 0, currentZPosition);
-        Instantiate(roadPrefab, roadPosition, Quaternion.Euler(0, -90, 0), roadParent.transform);
+        GameObject geo = Instantiate(roadPrefab, roadPosition, Quaternion.Euler(0, -90, 0), roadParent.transform);
+        activeRoads.Add(geo);
+        //lastRoadGenerated = geo;
+
         //Debug.Log($"Carretera generada a Z: {currentZPosition}");
 
         // **2. Genera les voreres**
-        GenerateSidewalks();
+        //GenerateSidewalks();
 
         // **3. Genera els elements decoratius**
-        GenerateSideElements();
+        //GenerateSideElements();
 
         // **4. Incrementa la posició Z per al següent tram**
-        currentZPosition += roadLength;
+        //currentZPosition += roadLength;
     }
 
     private void GenerateSidewalks()
@@ -94,5 +122,9 @@ public class EnviromentGenerator : MonoBehaviour
             Instantiate(rightElement, rightPosition, Quaternion.identity, roadParent.transform);
             //Debug.Log($"Element lateral dret generat a Z: {currentZPosition}");
         }
+    }
+
+    public void RemoveRoad(GameObject road) { 
+        activeRoads.Remove(road);
     }
 }

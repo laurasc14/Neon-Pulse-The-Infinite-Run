@@ -362,6 +362,7 @@
 "Assets/Scripts/AndroidCheck.cs"
 "Assets/Scripts/BoxController.cs"
 "Assets/Scripts/BoxSpawner.cs"
+"Assets/Scripts/DecorationGenerator.cs"
 "Assets/Scripts/DifficultyManager.cs"
 "Assets/Scripts/DifficultySelector.cs"
 "Assets/Scripts/EnviromentGenerator.cs"

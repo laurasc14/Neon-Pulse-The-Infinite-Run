@@ -20,7 +20,7 @@ public class RoadMovement : MonoBehaviour
         transform.position -= Vector3.forward * velocity * Time.deltaTime;
 
         if (transform.position.z < -30) { 
-            GetComponentInParent<EnviromentGenerator>().CreateRoad();
+            GetComponentInParent<EnviromentGenerator>().RemoveRoad(gameObject);
             Destroy(gameObject);
         }
     }

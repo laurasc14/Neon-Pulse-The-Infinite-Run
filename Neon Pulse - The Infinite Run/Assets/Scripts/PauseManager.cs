@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class PauseManager : MonoBehaviour
                 PauseGame();
             }
         }
+        // Reinicia el joc amb la tecla "R"
+        if (isPaused && Input.GetKeyDown(KeyCode.R))
+        {
+            RestartGame();
+        }
     }
 
     public void PauseGame()
@@ -50,6 +56,11 @@ public class PauseManager : MonoBehaviour
         {
             pauseMenuUI.SetActive(false); // Oculta el menú de pausa
         }
+    }
+    public void RestartGame()
+    {
+        Time.timeScale = 1f; // Reanuda el temps abans de reiniciar
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Recarrega l'escena actual
     }
 
     public void QuitGame()
