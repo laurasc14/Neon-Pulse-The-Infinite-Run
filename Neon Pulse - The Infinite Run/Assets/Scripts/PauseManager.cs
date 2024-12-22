@@ -5,67 +5,64 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    public static bool isPaused = false; // Estat de pausa
-    public GameObject pauseMenuUI;      // Menú de pausa (UI Canvas)
+    public static bool isPaused = false;
+    public GameObject pauseMenuUI;
+    public AudioSource audioSource; // Assigna l'AudioSource al menú
 
     void Start()
     {
-        // Amaga el menú de pausa quan comença el joc
         if (pauseMenuUI != null)
-        {
             pauseMenuUI.SetActive(false);
-        }
+
+        if (audioSource != null)
+            audioSource.Play(); // Comença la música del menú principal
     }
 
     void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (isPaused)
-            {
                 ResumeGame();
-            }
             else
-            {
                 PauseGame();
-            }
         }
-        // Reinicia el joc amb la tecla "R"
+
         if (isPaused && Input.GetKeyDown(KeyCode.R))
-        {
             RestartGame();
-        }
     }
 
     public void PauseGame()
     {
         isPaused = true;
-        Time.timeScale = 0f; // Pausa el temps del joc
+        Time.timeScale = 0f;
         if (pauseMenuUI != null)
-        {
-            pauseMenuUI.SetActive(true); // Mostra el menú de pausa
-        }
+            pauseMenuUI.SetActive(true);
+
+        if (audioSource != null)
+            audioSource.Pause(); // Pausa la música
     }
 
     public void ResumeGame()
     {
         isPaused = false;
-        Time.timeScale = 1f; // Reanuda el temps del joc
+        Time.timeScale = 1f;
         if (pauseMenuUI != null)
-        {
-            pauseMenuUI.SetActive(false); // Oculta el menú de pausa
-        }
+            pauseMenuUI.SetActive(false);
+
+        if (audioSource != null)
+            audioSource.UnPause(); // Reprèn la música
     }
+
     public void RestartGame()
     {
-        Time.timeScale = 1f; // Reanuda el temps abans de reiniciar
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Recarrega l'escena actual
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()
     {
         Debug.Log("Surt del joc");
-        Application.Quit(); // Tanca l'aplicació
+        Application.Quit();
     }
 }

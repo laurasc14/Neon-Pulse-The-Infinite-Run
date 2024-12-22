@@ -370,6 +370,7 @@
 "Assets/Scripts/GameSpawner.cs"
 "Assets/Scripts/MenuController.cs"
 "Assets/Scripts/MovimientoCapusla.cs"
+"Assets/Scripts/MusicManager.cs"
 "Assets/Scripts/ObjectPool.cs"
 "Assets/Scripts/ObstacleSpawner.cs"
 "Assets/Scripts/OptionsManager.cs"
