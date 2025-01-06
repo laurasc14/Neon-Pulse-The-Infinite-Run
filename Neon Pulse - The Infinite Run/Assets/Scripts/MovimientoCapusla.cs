@@ -115,6 +115,9 @@ public class MovimientoCapusla : MonoBehaviour
                 SceneManager.LoadScene(0); // Reinicia el nivell 
             }
         }
+        if (other.gameObject.CompareTag("JumpPlatform")) {
+            rb.AddForce(Vector3.up * jumpForce * 1.25f, ForceMode.Impulse);
+        }
     }
 
     private bool IsGrounded()
@@ -181,12 +184,12 @@ public class MovimientoCapusla : MonoBehaviour
                 coin.transform.position += direction * magnetSpeed * Time.deltaTime;
 
                 // Comprova si la moneda està prou a prop del jugador per ser recollida
-                if (Vector3.Distance(coin.transform.position, transform.position) < 0.8f) // Ajusta el valor segons calgui
-                {
-                    // Suma la moneda al comptador i destrueix-la
-                    ScoreManager.instance.AddCoin(1); // Incrementa les monedes
-                    Destroy(coin.gameObject); // Destrueix la moneda després d'atrapar-la
-                }
+                //if (Vector3.Distance(coin.transform.position, transform.position) < 0.8f) // Ajusta el valor segons calgui
+                //{
+                //    // Suma la moneda al comptador i destrueix-la
+                //    ScoreManager.instance.AddCoin(1); // Incrementa les monedes
+                //    Destroy(coin.gameObject); // Destrueix la moneda després d'atrapar-la
+                //}
             }
         }
 

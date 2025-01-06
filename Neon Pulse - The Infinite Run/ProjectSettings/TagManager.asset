@@ -7,6 +7,7 @@ TagManager:
   - Obstaculo
   - Coin
   - PowerUp
+  - JumpPlatform
   layers:
   - Default
   - TransparentFX
